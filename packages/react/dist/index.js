@@ -37,7 +37,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-  App: () => App
+  Button: () => Button
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -114,9 +114,18 @@ var lineHeights = {
   tall: "180%"
 };
 
-// styles/index.ts
+// src/styles/index.ts
 var import_react = require("@stitches/react");
-var { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } = (0, import_react.createStitches)({
+var {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config
+} = (0, import_react.createStitches)({
   themeMap: __spreadProps(__spreadValues({}, import_react.defaultThemeMap), {
     height: "space",
     width: "space"
@@ -133,17 +142,29 @@ var { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config 
 });
 
 // src/index.tsx
-var import_jsx_runtime = require("react/jsx-runtime");
 var Button = styled("button", {
-  fontFamily: "$default",
-  backgroundColor: "$ignite500",
-  borderRadius: "$md",
-  padding: "$4"
+  backgroundColor: "$ignite300",
+  borderRadius: "$sm",
+  border: 0,
+  fontWeight: "bold",
+  color: "$white",
+  variants: {
+    size: {
+      small: {
+        fontSize: 14,
+        padding: "$2 $4"
+      },
+      big: {
+        fontSize: 16,
+        padding: "$3 $6"
+      }
+    }
+  },
+  defaultVariants: {
+    size: "small"
+  }
 });
-function App() {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, { children: "Start da Aplicacao" });
-}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  App
+  Button
 });

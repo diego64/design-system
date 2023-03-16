@@ -91,9 +91,18 @@ var lineHeights = {
   tall: "180%"
 };
 
-// styles/index.ts
+// src/styles/index.ts
 import { createStitches, defaultThemeMap } from "@stitches/react";
-var { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } = createStitches({
+var {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config
+} = createStitches({
   themeMap: __spreadProps(__spreadValues({}, defaultThemeMap), {
     height: "space",
     width: "space"
@@ -110,16 +119,28 @@ var { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config 
 });
 
 // src/index.tsx
-import { jsx } from "react/jsx-runtime";
 var Button = styled("button", {
-  fontFamily: "$default",
-  backgroundColor: "$ignite500",
-  borderRadius: "$md",
-  padding: "$4"
+  backgroundColor: "$ignite300",
+  borderRadius: "$sm",
+  border: 0,
+  fontWeight: "bold",
+  color: "$white",
+  variants: {
+    size: {
+      small: {
+        fontSize: 14,
+        padding: "$2 $4"
+      },
+      big: {
+        fontSize: 16,
+        padding: "$3 $6"
+      }
+    }
+  },
+  defaultVariants: {
+    size: "small"
+  }
 });
-function App() {
-  return /* @__PURE__ */ jsx(Button, { children: "Start da Aplicacao" });
-}
 export {
-  App
+  Button
 };

@@ -8,6 +8,13 @@ export default {
     src: 'https://github.com/diego64.png',
     alt: 'Diego Ferreira',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
